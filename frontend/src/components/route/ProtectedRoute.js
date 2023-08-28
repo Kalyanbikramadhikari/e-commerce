@@ -8,9 +8,9 @@ const ProtectedRoute = ({children}) => {
     const {user} = useSelector((state)=>state.auth)
     const navigate = useNavigate()
     if(user.name){
-        if(user.role !=='admin'){
-            return navigate('/')
-        }
+        // if(user.role !=='admin'){
+        //     return navigate('/')
+        // }
         return children
         
     }else{

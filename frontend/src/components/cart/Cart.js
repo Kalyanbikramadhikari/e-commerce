@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart, decreaseCart, increaseCart, removeFromCart, totalpriceIncart, totalproductIncart } from "../../features/reducerSlices/cartSlice";
 
-function Cart() {
+const Cart = () => {
     const dispatch = useDispatch()
     const product = useSelector(state=>state.cart)
     // const user= useSelector(stat=>state.auth)

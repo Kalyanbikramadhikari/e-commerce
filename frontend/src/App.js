@@ -63,8 +63,8 @@ function App() {
         <Route path= "/login" element = {<Login/>}/>
         <Route path= "/register" element = {<Register/>}/>
         <Route path= "/profile" element = {<Profile/>}/>
-
-        <Route path= "/cart" element = {<ProtectedRoute><Cart/> </ProtectedRoute>}/>
+        <Route path= "/cart" element = {<Cart/>}/>
+        {/* <Route path= "/cart" element = {<ProtectedRoute><Cart/> </ProtectedRoute>}/> */}
         <Route path= "/shipping" element = {<ProtectedRoute><Shipping/> </ProtectedRoute>}/>
         <Route path= "/confirmorder" element = {<ProtectedRoute><Confirmingorder/> </ProtectedRoute>}/>
         <Route path= "/Payment" element = {<ProtectedRoute><Payment/> </ProtectedRoute>}/>

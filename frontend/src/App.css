@@ -129,8 +129,24 @@
 .latest-products{
     font-weight: 700;
     font-size: larger;
-    border: 2px solid red;
-    
+    color: white;
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 10px;
+    /* border: 2px solid red; */
+    background-color: #252E41 ;
+
+}
+.latest-triangle{
+  /* background-color: #252E41 ; */
+  margin-left: 55px;
+  width: 0px;
+  height: 0px;
+  border-top: 12px solid #252E41;
+  border-left: 12px solid transparent ;
+  border-right: 12px solid transparent;
+
+
 }
 .all-products{
     padding: 20px;
@@ -506,4 +522,52 @@ table, th, td {
 }
 .fa-pen-to-square{
   color: blue;
+}
+
+
+/* CSS for register page is here */
+.register-page{
+  border: 2px solid red;
+  margin: 10px;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.register-page .register-content{
+ /* margin: auto; */
+  border: 2px solid orange;
+  padding: 25px;
+
+
+}
+.label-input-container{
+  /* display: flex; */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  
+}
+.register-label{
+  font-size: larger;
+  font-weight: 400;
+}
+.register-input{
+  outline: none;
+  /* margin-left: 10px; */
+}
+.default-avatar{
+  height: 80px;
+}
+.register-button-container{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.register-button{
+  height: 40px;
+  width: 100px;
+  border-radius: 5px ;
+  
 }

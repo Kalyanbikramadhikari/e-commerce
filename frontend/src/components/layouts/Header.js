@@ -8,7 +8,7 @@ const Header = () => {
     const data = useSelector((state)=> state.auth)
     const dispatch = useDispatch()
 
-    console.log(data)
+    console.log('data',data)
     const changeHandler=()=>{
         
     }

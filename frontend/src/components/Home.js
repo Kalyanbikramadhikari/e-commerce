@@ -26,8 +26,12 @@ const Home = () => {
         <><div className='home-page'>
     
         <MetaData title={'Buy Best Products Online'}/>
-       <span className='latest-products'>Latest Products</span>
+        <div>
+        <span className='latest-products'>Latest Products</span>
+       <div className='latest-triangle'></div>
     
+        </div>
+       
        <div className='all-products'>
         
             {/* {products && products.map(product=>{ */}

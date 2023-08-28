@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useRegisterMutation } from '../../features/APIslices/productApi';
 const Register = () => {
     const dispatch = useDispatch();
+    const [register,{data}] = useRegisterMutation()
+    console.log(register, data)
+
     const [user, setUser] = useState({
       name: '',
       email: '',
@@ -10,12 +13,11 @@ const Register = () => {
   })
   const { name, email, password } = user;
 
-    
+    const defaultAvatar = 'images/default_avatar.jpg'
     const [avatar, setAvatar] = useState('')
-    const [avatarPreview, setAvatarPreview] = useState('/images/default image.jpg')
+    const [avatarPreview, setAvatarPreview] = useState('/images/default_avatar.jpg')
     // const { isAuthenticated, error, loading } = useSelector(state => state.auth);
-    const [register,{data}] = useRegisterMutation()
-    console.log(register, data)
+
     const onChange =(e)=>{
       e.preventDefault();
       const fieldName = e.target.getAttribute('name');
@@ -25,15 +27,23 @@ const Register = () => {
       newUser[fieldName] = fieldValue
       setUser(newUser)
     }
+
+
     const submitHandler = ()=>{
-      const formData = new FormData();
-      formData.set('name', name);
-      formData.set('email', email)
-      formData.set('password', password)
-      formData.set('avatar', avatar)
+    //   const formData = new FormData();
+    //   formData.set('name', name);
+    //   formData.set('email', email)
+    //   formData.set('password', password)
+    //   formData.set('avatar', avatar)
 
-
-      dispatch(register(formData))
+      const userNow = {
+        name: '',
+        email: '',
+        password: '',
+      }
+      setUser(userNow)
+      dispatch(register({'name':name, 'email':email, 'password':password}))
+      
     }
    
 
@@ -41,7 +51,7 @@ const Register = () => {
         <Fragment>
 
             {/* <MetaData title={'Register User'} /> */}
-
+{/* 
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler} >
@@ -102,11 +112,9 @@ const Register = () => {
                                         className='custom-file-input'
                                         id='customFile'
                                         accept="iamges/*"
-                                        // onChange={onChange}
+                                        
                                     />
-                                    {/* <label className='custom-file-label' htmlFor='customFile'>
-                                        Choose Avatar
-                                    </label> */}
+                               
                                 </div>
                             </div>
                         </div>
@@ -115,11 +123,46 @@ const Register = () => {
                             id="register_button"
                             type="submit"
                             className="btn btn-block py-3"
-                            // disabled={loading ? true : false}
+                          
                         >
                             REGISTER
                         </button>
                     </form>
+                </div>
+            </div> */}
+            
+            <div className="register-page">
+                <div className='register-content'>
+                    <div className='label-input-container'>
+                        <label htmlFor="" className='register-label'>Name</label>
+                        <input type="text" className='register-input' onChange={onChange} placeholder='Enter your Name' name='name' value={name}/>
+                    </div>
+                    <div className='label-input-container'>
+                        <label htmlFor="" className='register-label'>Email</label>
+                        <input type="email" className='register-input' onChange={onChange} placeholder='Enter your Email' name='email' value={email} />
+                    </div>
+                    <div className='label-input-container'>
+                        <label htmlFor="" className='register-label'>Password</label>
+                        <input type="password" className='register-input' onChange={onChange} placeholder='Enter your Password' name='password' value={password} />
+                    </div>
+                    <div className='label-input-container'>
+                        <label htmlFor="" className='register-label'>Avatar</label>
+                        <div>
+                            {/* this image will be the preview image and default one */}
+                            <img src={defaultAvatar} className='default-avatar' alt="" />
+                            <input type="file" />
+                        
+
+                        </div>
+                    </div>
+                    <div className='register-button-container'>
+                        <button className='register-button' type="button" onClick={submitHandler}>REGISTER</button>
+
+                    </div>
+                    <div>
+                        <span>Have an Account?</span>
+                    </div>
+
                 </div>
             </div>
 

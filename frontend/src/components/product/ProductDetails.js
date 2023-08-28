@@ -77,7 +77,7 @@ const ProductDetails = () => {
         <div className='product-details'>
             <MetaData titile={data.product.name}/>
         <div className='product-photo'>
-            <img className='product-image' src="/images/tv.jpg" alt=""/>
+            <img className='product-image' src="/images/img.png" alt=""/>
         </div>
 
         <div className='product-discription'>
