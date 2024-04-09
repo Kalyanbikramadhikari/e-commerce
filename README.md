@@ -5,7 +5,8 @@ shopit is the web based e-commerce application built with MERN(MongoDB,Express, 
 It allows users to buy and sell products online. It uses stripe for online payment. Users can easily get feedback based on the action they perfom in the interface. There are core features like Authentication and authorization in the project. It gives feedback to users based on the action they perform in the interface.
 Vendors can view the dashboards.
 
-
+## Screenshot of product page:
+![ProductPage!](https://github.com/Kalyanbikramadhikari/e-commerce/assets/74446184/ba2da897-4374-44c0-ba38-7726d1805024)
 
 ## ENV variables
 Add your config variables values in the config.env file in backend/config folder
